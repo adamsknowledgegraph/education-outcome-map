@@ -475,6 +475,27 @@
       .join("");
   }
 
+  function renderProgramExamples(programs) {
+    if (!programs || !programs.length) {
+      return `<span class="muted">No real-school examples loaded for this route yet.</span>`;
+    }
+    return programs
+      .slice(0, 4)
+      .map(
+        (program) => `
+          <div class="career-row">
+            <div>
+              <strong>${program.institution_name}</strong>
+              <span>${program.institution_city}, ${program.institution_state} · ${program.program_credential_title || titleCase(program.segment_label)}</span>
+              <span>${program.program_title}</span>
+            </div>
+            <em>${program.tuition_in_state ? `${money(program.tuition_in_state)} in-state` : program.avg_net_price ? `${money(program.avg_net_price)} net price` : titleCase(program.segment_label)}</em>
+          </div>
+        `,
+      )
+      .join("");
+  }
+
   function renderSummaryCards(cards) {
     els.summary.innerHTML = cards
       .map(
@@ -542,6 +563,9 @@
 
             <div class="section-label">Top skills</div>
             <div class="inline-list">${renderTopSkills(path.top_skills)}</div>
+
+            <div class="section-label">Real program examples</div>
+            <div class="career-list">${renderProgramExamples(path.institution_examples)}</div>
 
             <div class="section-label">Evidence</div>
             <div class="source-list">${renderSources(path.source_links)}</div>
@@ -614,6 +638,9 @@
                 )
                 .join("")}
             </div>
+
+            <div class="section-label">Real school examples</div>
+            <div class="career-list">${renderProgramExamples(degree.institution_examples)}</div>
 
             <div class="section-label">Evidence</div>
             <div class="source-list">${renderSources(degree.source_links)}</div>
@@ -780,7 +807,7 @@
   function render() {
     syncChipState();
     els.pathCount.textContent = Number(data.prototype_scope.path_count).toLocaleString("en-US");
-    els.scopeCopy.textContent = `${data.prototype_scope.degree_count} education routes · ${data.prototype_scope.profession_count} careers · ${data.prototype_scope.skill_count} skills with provenance`;
+    els.scopeCopy.textContent = `${data.prototype_scope.degree_count} routes · ${data.prototype_scope.profession_count} careers · ${data.prototype_scope.program_option_count || 0} real school programs`;
 
     const decoratedPaths = data.paths.map(decoratePath).sort((a, b) => b.score - a.score);
     const decoratedDegrees = data.degrees.map(decorateDegree).sort((a, b) => b.score - a.score);

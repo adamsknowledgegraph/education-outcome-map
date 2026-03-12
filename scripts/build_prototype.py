@@ -91,6 +91,12 @@ def load_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def load_csv_optional(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    return load_csv(path)
+
+
 def write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
@@ -334,6 +340,7 @@ def main() -> None:
     manual_paths = load_csv(DATA_DIR / "manual_path_overrides.csv")
     lifestyle_tiers = load_csv(DATA_DIR / "lifestyle_tiers.csv")
     city_cost_tiers = load_csv(DATA_DIR / "city_cost_tiers.csv")
+    education_programs = load_csv_optional(DATA_DIR / "education_programs_v1.csv")
     cip_crosswalk = load_cip_crosswalk(CIP_CROSSWALK)
 
     occupation_rows = load_tsv(RAW_ONET_DIR / "Occupation Data.txt")
@@ -382,6 +389,14 @@ def main() -> None:
         "heuristic_overlay",
         "Boundary quality, AI exposure, and geographic concentration combine O*NET work-context data with manual interpretation to stay useful for students.",
         "Education Outcome Map prototype",
+    )
+    source_registry["source:scorecard:dataset"] = source_link(
+        "source:scorecard:dataset",
+        "College Scorecard institution and field-of-study data",
+        "https://collegescorecard.ed.gov/data/",
+        "dataset",
+        "Institution and program examples come from the U.S. Department of Education College Scorecard data layer.",
+        "U.S. Department of Education",
     )
 
     degrees_out: list[dict[str, object]] = []
@@ -690,11 +705,81 @@ def main() -> None:
             "onet_url": profession["onet_url"],
             "source_links": relation_sources,
             "source_ids": source_ids,
+            "institution_examples": [],
         }
         path_outcomes.append(path_record)
 
     skills_out = sorted(unique_skills.values(), key=lambda row: row["skill_name"])
     interest_out = [INTEREST_META[key] for key in INTEREST_META]
+
+    institution_programs_by_degree: dict[str, list[dict[str, object]]] = defaultdict(list)
+    institution_program_count = 0
+    for program in education_programs:
+        degree_id = program["degree_id"]
+        scorecard_source_id = f"source:scorecard:school:{program['institution_id']}"
+        source_registry[scorecard_source_id] = source_link(
+            scorecard_source_id,
+            f"{program['institution_name']} on College Scorecard",
+            program["scorecard_school_url"],
+            "institution_profile",
+            "Program example derived from College Scorecard institution and program-level data.",
+            "U.S. Department of Education",
+        )
+        institution_site_source_id = f"source:school-site:{program['institution_id']}"
+        if program.get("institution_url"):
+            source_registry[institution_site_source_id] = source_link(
+                institution_site_source_id,
+                f"{program['institution_name']} website",
+                program["institution_url"],
+                "institution_website",
+                "School website linked for direct program discovery after the data-backed match.",
+                program["institution_name"],
+            )
+
+        source_ids = ["source:scorecard:dataset", scorecard_source_id]
+        if program.get("institution_url"):
+            source_ids.append(institution_site_source_id)
+
+        program_record = {
+            "program_option_id": program["program_option_id"],
+            "degree_id": degree_id,
+            "institution_id": to_int(program["institution_id"]),
+            "institution_name": program["institution_name"],
+            "institution_state": program["institution_state"],
+            "institution_city": program["institution_city"],
+            "institution_ownership": program["institution_ownership"],
+            "segment_label": program["segment_label"],
+            "program_title": program["program_title"],
+            "program_credential_title": program["program_credential_title"],
+            "program_awards_count": to_int(program["program_awards_count"]),
+            "program_earnings_1yr": to_int(program["program_earnings_1yr"]),
+            "program_earnings_4yr": to_int(program["program_earnings_4yr"]),
+            "institution_earnings_10yr": to_int(program["institution_earnings_10yr"]),
+            "completion_rate": round(to_float(program["completion_rate"]), 4),
+            "admission_rate": round(to_float(program["admission_rate"]), 4),
+            "sat_average": to_int(program["sat_average"]),
+            "avg_net_price": to_int(program["avg_net_price"]),
+            "tuition_in_state": to_int(program["tuition_in_state"]),
+            "tuition_out_of_state": to_int(program["tuition_out_of_state"]),
+            "featured_score": round(to_float(program["featured_score"]), 4),
+            "scorecard_school_url": program["scorecard_school_url"],
+            "institution_url": program["institution_url"],
+            "source_links": [source_registry[source_id] for source_id in source_ids],
+        }
+        institution_program_count += 1
+        institution_programs_by_degree[degree_id].append(program_record)
+
+    for degree_id in institution_programs_by_degree:
+        institution_programs_by_degree[degree_id] = sorted(
+            institution_programs_by_degree[degree_id],
+            key=lambda item: (
+                item["featured_score"],
+                item["program_earnings_4yr"],
+                item["institution_earnings_10yr"],
+                item["completion_rate"],
+            ),
+            reverse=True,
+        )
 
     graph_nodes = []
     graph_links = []
@@ -789,6 +874,8 @@ def main() -> None:
             {
                 **degree,
                 "path_count": len(linked_paths),
+                "institution_examples": institution_programs_by_degree.get(degree["degree_id"], [])[:8],
+                "institution_example_count": len(institution_programs_by_degree.get(degree["degree_id"], [])),
                 "top_paths": top_paths,
                 "max_downstream_hourly_wage_usd": max(
                     (item["median_hourly_wage_usd"] for item in linked_paths),
@@ -802,6 +889,9 @@ def main() -> None:
             }
         )
 
+    for row in path_outcomes:
+        row["institution_examples"] = institution_programs_by_degree.get(row["degree_id"], [])[:6]
+
     app_payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "prototype_scope": {
@@ -809,6 +899,7 @@ def main() -> None:
             "profession_count": len(professions_out),
             "path_count": len(path_outcomes),
             "skill_count": len(skills_out),
+            "program_option_count": institution_program_count,
         },
         "notes": [
             "This prototype is student-facing by design: it mixes official labor datasets with a clear lifestyle overlay.",
@@ -1114,6 +1205,7 @@ def main() -> None:
                 "onet_url": row["onet_url"],
                 "interest_overlap": ";".join(row["interest_overlap"]),
                 "top_skills_json": json_compact(row["top_skills"]),
+                "institution_examples_json": json_compact(row["institution_examples"]),
                 "source_ids_json": json_compact(row["source_ids"]),
             }
             for row in path_outcomes
@@ -1163,6 +1255,7 @@ def main() -> None:
             "onet_url",
             "interest_overlap",
             "top_skills_json",
+            "institution_examples_json",
             "source_ids_json",
         ],
     )
@@ -1178,9 +1271,11 @@ def main() -> None:
                 "time_to_complete_years": row["time_to_complete_years"],
                 "cost_band": row["cost_band"],
                 "path_count": row["path_count"],
+                "institution_example_count": row["institution_example_count"],
                 "max_downstream_hourly_wage_usd": row["max_downstream_hourly_wage_usd"],
                 "max_downstream_annual_wage_usd": row["max_downstream_annual_wage_usd"],
                 "best_openings_annual": row["best_openings_annual"],
+                "institution_examples_json": json_compact(row["institution_examples"]),
                 "top_paths_json": json_compact(row["top_paths"]),
                 "source_ids_json": json_compact([item["source_id"] for item in row["source_links"]]),
             }
@@ -1195,9 +1290,11 @@ def main() -> None:
             "time_to_complete_years",
             "cost_band",
             "path_count",
+            "institution_example_count",
             "max_downstream_hourly_wage_usd",
             "max_downstream_annual_wage_usd",
             "best_openings_annual",
+            "institution_examples_json",
             "top_paths_json",
             "source_ids_json",
         ],

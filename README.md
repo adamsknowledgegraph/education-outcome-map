@@ -79,15 +79,19 @@ The current prototype combines:
 
 - O*NET 30.2 occupation, skills, interests, job zone, and work-context data
 - O*NET's 2020 CIP -> O*NET-SOC crosswalk
+- College Scorecard institution and CIP-4 program data for real school examples across all 50 states plus DC
 - official BLS Occupational Outlook Handbook pages for wages, growth, employment, and openings
 - official BLS field-of-degree pages for field-level degree context
 - a student-facing lifestyle overlay for hours, schedule, AI exposure, and geographic concentration
+
+Named program options are generated into `data/education_programs_v1.csv` and folded into the app so users can see actual universities, community colleges, and trade-oriented providers for each route.
 
 ## Build
 
 Build the generated datasets and dashboard:
 
 ```bash
+COLLEGE_SCORECARD_API_KEY=your_key python3 scripts/fetch_scorecard_programs.py
 python3 scripts/build_prototype.py
 ```
 
@@ -108,8 +112,15 @@ https://adamsknowledgegraph.github.io/education-outcome-map/
 - `data/degrees_v1.csv`
 - `data/professions_v1.csv`
 - `data/degree_options_v1.csv`
+- `data/education_programs_v1.csv`
 - `data/profession_lifestyle_profiles_v1.csv`
 - `data/path_outcomes_v1.csv`
 - `data/source_registry_v1.json`
 - `data/grc20-compatible-graph.json`
 - `app/data/prototype-data.js`
+
+## Current Coverage Notes
+
+- The program layer currently includes 839 real school options and spans all 50 states plus Washington, DC.
+- Trade and shorter routes are prioritized alongside bachelor's degrees through community colleges, technical colleges, and apprenticeship-adjacent providers.
+- A few paths still lack named school examples because College Scorecard's CIP-4 buckets are too coarse for them right now: `radiologic_technology_associate`, `respiratory_therapy_associate`, and `tile_setting_certificate`.
