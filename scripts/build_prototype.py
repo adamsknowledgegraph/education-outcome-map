@@ -204,6 +204,94 @@ def load_level_lookup(rows: list[dict[str, str]], scale_id: str) -> dict[tuple[s
     return lookup
 
 
+def load_category_descriptions(rows: list[dict[str, str]]) -> dict[tuple[str, str, str], str]:
+    lookup: dict[tuple[str, str, str], str] = {}
+    for row in rows:
+        lookup[(row["Element Name"], row["Scale ID"], row["Category"])] = row["Category Description"]
+    return lookup
+
+
+def load_category_distribution(
+    rows: list[dict[str, str]],
+    element_name: str,
+    scale_id: str,
+    category_lookup: dict[tuple[str, str, str], str],
+) -> dict[str, list[dict[str, float | str]]]:
+    grouped: dict[str, list[dict[str, float | str]]] = defaultdict(list)
+    for row in rows:
+        if row.get("Element Name") != element_name or row.get("Scale ID") != scale_id:
+            continue
+        grouped[row["O*NET-SOC Code"]].append(
+            {
+                "category": row["Category"],
+                "label": category_lookup.get((element_name, scale_id, row["Category"]), row["Category"]),
+                "value": round(float(row["Data Value"]), 2),
+            }
+        )
+    for code in grouped:
+        grouped[code] = sorted(grouped[code], key=lambda item: item["value"], reverse=True)
+    return grouped
+
+
+def top_work_styles(rows: list[dict[str, str]]) -> dict[str, list[dict[str, float | str]]]:
+    grouped: dict[str, list[dict[str, float | str]]] = defaultdict(list)
+    for row in rows:
+        if row.get("Scale ID") != "WI":
+            continue
+        grouped[row["O*NET-SOC Code"]].append(
+            {
+                "name": row["Element Name"],
+                "score": round(float(row["Data Value"]), 2),
+            }
+        )
+    for code in grouped:
+        grouped[code] = sorted(grouped[code], key=lambda item: item["score"], reverse=True)
+    return grouped
+
+
+def technology_examples(rows: list[dict[str, str]]) -> dict[str, list[dict[str, str]]]:
+    grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
+    seen: dict[str, set[str]] = defaultdict(set)
+    for row in rows:
+        code = row["O*NET-SOC Code"]
+        example = row["Example"]
+        if example in seen[code]:
+            continue
+        seen[code].add(example)
+        grouped[code].append(
+            {
+                "example": example,
+                "commodity_title": row["Commodity Title"],
+                "hot_technology": row["Hot Technology"],
+                "in_demand": row["In Demand"],
+            }
+        )
+    for code in grouped:
+        grouped[code] = sorted(
+            grouped[code],
+            key=lambda item: (item["hot_technology"] == "Y", item["in_demand"] == "Y", item["example"]),
+            reverse=True,
+        )
+    return grouped
+
+
+def related_occupations(rows: list[dict[str, str]], occupation_lookup: dict[str, dict[str, str]]) -> dict[str, list[dict[str, str]]]:
+    grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in rows:
+        related_code = row["Related O*NET-SOC Code"]
+        related_title = occupation_lookup.get(related_code, {}).get("Title")
+        if not related_title:
+            continue
+        grouped[row["O*NET-SOC Code"]].append(
+            {
+                "soc_code": related_code,
+                "title": related_title,
+                "tier": row["Relatedness Tier"],
+            }
+        )
+    return grouped
+
+
 def top_interest_profile(rows: list[dict[str, str]]) -> dict[str, list[dict[str, float | str]]]:
     grouped: dict[str, list[dict[str, float | str]]] = defaultdict(list)
     for row in rows:
@@ -349,6 +437,13 @@ def main() -> None:
     interests_rows = load_tsv(RAW_ONET_DIR / "Interests.txt")
     work_context_rows = load_tsv(RAW_ONET_DIR / "Work Context.txt")
     job_zone_rows = load_tsv(RAW_ONET_DIR / "Job Zones.txt")
+    education_training_rows = load_tsv(RAW_ONET_DIR / "Education, Training, and Experience.txt")
+    education_training_categories = load_tsv(
+        RAW_ONET_DIR / "Education, Training, and Experience Categories.txt"
+    )
+    work_styles_rows = load_tsv(RAW_ONET_DIR / "Work Styles.txt")
+    technology_rows = load_tsv(RAW_ONET_DIR / "Technology Skills.txt")
+    related_occupations_rows = load_tsv(RAW_ONET_DIR / "Related Occupations.txt")
 
     occupation_lookup = {row["O*NET-SOC Code"]: row for row in occupation_rows}
     skill_importance = load_ranked_measure(skills_rows, "IM")
@@ -358,6 +453,28 @@ def main() -> None:
     interest_profiles = top_interest_profile(interests_rows)
     context_lookup = work_context_lookup(work_context_rows)
     job_zone_lookup = {row["O*NET-SOC Code"]: row["Job Zone"] for row in job_zone_rows}
+    category_lookup = load_category_descriptions(education_training_categories)
+    required_education_distribution = load_category_distribution(
+        education_training_rows,
+        "Required Level of Education",
+        "RL",
+        category_lookup,
+    )
+    related_experience_distribution = load_category_distribution(
+        education_training_rows,
+        "Related Work Experience",
+        "RW",
+        category_lookup,
+    )
+    on_job_training_distribution = load_category_distribution(
+        education_training_rows,
+        "On-the-Job Training",
+        "OJ",
+        category_lookup,
+    )
+    work_styles_lookup = top_work_styles(work_styles_rows)
+    technology_lookup = technology_examples(technology_rows)
+    related_occupations_lookup = related_occupations(related_occupations_rows, occupation_lookup)
 
     crosswalk_by_cip: dict[str, set[str]] = defaultdict(set)
     crosswalk_titles: dict[tuple[str, str], str] = {}
@@ -471,6 +588,12 @@ def main() -> None:
         code = profession["onet_soc_code"]
         occupation = occupation_lookup.get(code, {})
         context = context_lookup.get(code, {})
+        education_distribution = required_education_distribution.get(code, [])[:4]
+        experience_distribution = related_experience_distribution.get(code, [])[:3]
+        training_distribution = on_job_training_distribution.get(code, [])[:3]
+        work_styles = work_styles_lookup.get(code, [])[:4]
+        tech_examples = technology_lookup.get(code, [])[:6]
+        related_roles = related_occupations_lookup.get(code, [])[:5]
         top_skills = skill_importance.get(code, [])[:5]
         for item in top_skills:
             item["level_score"] = skill_levels.get((code, item["name"]), 0.0)
@@ -556,6 +679,9 @@ def main() -> None:
             "regular_schedule_pct": round(context.get("Work Schedules__1", 0.0), 2),
             "irregular_schedule_pct": round(context.get("Work Schedules__2", 0.0), 2),
             "seasonal_schedule_pct": round(context.get("Work Schedules__3", 0.0), 2),
+            "required_education_distribution": education_distribution,
+            "related_experience_distribution": experience_distribution,
+            "on_job_training_distribution": training_distribution,
         }
         lifestyle_out.append(lifestyle_record)
 
@@ -607,6 +733,12 @@ def main() -> None:
                 ]
             ),
             "top_skills": top_skill_bundle,
+            "top_work_styles": work_styles,
+            "technology_examples": tech_examples,
+            "related_roles": related_roles,
+            "required_education_distribution": education_distribution,
+            "related_experience_distribution": experience_distribution,
+            "on_job_training_distribution": training_distribution,
             "interest_profile": interest_profiles.get(code, [])[:3],
             **lifestyle_record,
         }
@@ -694,6 +826,12 @@ def main() -> None:
             "interest_overlap": interest_matches,
             "fit_scores": degree["fit_scores"],
             "top_skills": top_skills,
+            "top_work_styles": profession["top_work_styles"],
+            "technology_examples": profession["technology_examples"],
+            "required_education_distribution": profession["required_education_distribution"],
+            "related_experience_distribution": profession["related_experience_distribution"],
+            "on_job_training_distribution": profession["on_job_training_distribution"],
+            "related_roles": profession["related_roles"],
             "tradeoff_summary": build_tradeoff_summary(profession, default_target_income),
             "reality_check": build_reality_check(degree, profession, path),
             "path_note": path["path_note"],
@@ -874,8 +1012,14 @@ def main() -> None:
             {
                 **degree,
                 "path_count": len(linked_paths),
-                "institution_examples": institution_programs_by_degree.get(degree["degree_id"], [])[:8],
+                "institution_examples": institution_programs_by_degree.get(degree["degree_id"], [])[:12],
                 "institution_example_count": len(institution_programs_by_degree.get(degree["degree_id"], [])),
+                "program_states_covered": len(
+                    {
+                        item["institution_state"]
+                        for item in institution_programs_by_degree.get(degree["degree_id"], [])
+                    }
+                ),
                 "top_paths": top_paths,
                 "max_downstream_hourly_wage_usd": max(
                     (item["median_hourly_wage_usd"] for item in linked_paths),
@@ -890,7 +1034,7 @@ def main() -> None:
         )
 
     for row in path_outcomes:
-        row["institution_examples"] = institution_programs_by_degree.get(row["degree_id"], [])[:6]
+        row["institution_examples"] = institution_programs_by_degree.get(row["degree_id"], [])[:8]
 
     app_payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -1117,7 +1261,40 @@ def main() -> None:
     )
     write_csv(
         DATA_DIR / "profession_lifestyle_profiles_v1.csv",
-        lifestyle_out,
+        [
+            {
+                "profession_id": row["profession_id"],
+                "lifestyle_profile_node_id": row["lifestyle_profile_node_id"],
+                "avg_weekly_hours_band": row["avg_weekly_hours_band"],
+                "avg_weekly_hours_estimate": row["avg_weekly_hours_estimate"],
+                "schedule_type": row["schedule_type"],
+                "boundary_quality": row["boundary_quality"],
+                "predictability": row["predictability"],
+                "ai_exposure": row["ai_exposure"],
+                "geographic_concentration": row["geographic_concentration"],
+                "physical_intensity": row["physical_intensity"],
+                "remote_friendliness": row["remote_friendliness"],
+                "weekend_work_likelihood": row["weekend_work_likelihood"],
+                "night_work_likelihood": row["night_work_likelihood"],
+                "heuristic_flag": row["heuristic_flag"],
+                "source": row["source"],
+                "notes": row["notes"],
+                "time_pressure_score": row["time_pressure_score"],
+                "contact_with_others_score": row["contact_with_others_score"],
+                "email_score": row["email_score"],
+                "face_to_face_score": row["face_to_face_score"],
+                "sitting_score": row["sitting_score"],
+                "standing_score": row["standing_score"],
+                "walking_score": row["walking_score"],
+                "regular_schedule_pct": row["regular_schedule_pct"],
+                "irregular_schedule_pct": row["irregular_schedule_pct"],
+                "seasonal_schedule_pct": row["seasonal_schedule_pct"],
+                "required_education_distribution_json": json_compact(row["required_education_distribution"]),
+                "related_experience_distribution_json": json_compact(row["related_experience_distribution"]),
+                "on_job_training_distribution_json": json_compact(row["on_job_training_distribution"]),
+            }
+            for row in lifestyle_out
+        ],
         [
             "profession_id",
             "lifestyle_profile_node_id",
@@ -1145,6 +1322,9 @@ def main() -> None:
             "regular_schedule_pct",
             "irregular_schedule_pct",
             "seasonal_schedule_pct",
+            "required_education_distribution_json",
+            "related_experience_distribution_json",
+            "on_job_training_distribution_json",
         ],
     )
     write_csv(
@@ -1272,6 +1452,7 @@ def main() -> None:
                 "cost_band": row["cost_band"],
                 "path_count": row["path_count"],
                 "institution_example_count": row["institution_example_count"],
+                "program_states_covered": row["program_states_covered"],
                 "max_downstream_hourly_wage_usd": row["max_downstream_hourly_wage_usd"],
                 "max_downstream_annual_wage_usd": row["max_downstream_annual_wage_usd"],
                 "best_openings_annual": row["best_openings_annual"],
@@ -1291,6 +1472,7 @@ def main() -> None:
             "cost_band",
             "path_count",
             "institution_example_count",
+            "program_states_covered",
             "max_downstream_hourly_wage_usd",
             "max_downstream_annual_wage_usd",
             "best_openings_annual",

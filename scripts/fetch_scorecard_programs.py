@@ -54,24 +54,11 @@ PREDOMINANT_LABELS = {
 }
 
 QUERY_SEGMENTS = [
-    {"predominant": 3, "segment": "four_year", "per_page": 20, "pages": 20},
-    {"predominant": 2, "segment": "two_year", "per_page": 20, "pages": 12},
+    {"predominant": 3, "segment": "four_year", "per_page": 100},
+    {"predominant": 2, "segment": "two_year", "per_page": 100},
+    {"predominant": 1, "segment": "certificate_first", "per_page": 100},
 ]
-
-TARGETED_DEGREE_SUPPLEMENTS = [
-    "graphic_design_bachelors",
-    "ux_design_bachelors",
-    "paralegal_associate",
-    "construction_management_bachelors",
-    "dental_hygiene_associate",
-    "electrician_apprenticeship",
-    "plumbing_apprenticeship",
-    "carpentry_apprenticeship",
-    "hvac_certificate",
-    "welding_certificate",
-]
-
-MISSING_STATE_SUPPLEMENTS = ["AK", "ID", "MS", "MT"]
+MAX_PER_DEGREE_STATE = 3
 
 FIELDNAMES = [
     "program_option_id",
@@ -288,7 +275,7 @@ def school_score(row: dict[str, Any], degree: dict[str, Any]) -> float:
     )
 
 
-def fetch_segment_page(predominant: int, per_page: int, page: int) -> list[dict[str, Any]]:
+def fetch_segment_page(predominant: int, per_page: int, page: int) -> dict[str, Any]:
     params = {
         "api_key": API_KEY,
         "school.degrees_awarded.predominant": predominant,
@@ -299,13 +286,41 @@ def fetch_segment_page(predominant: int, per_page: int, page: int) -> list[dict[
         "keys_nested": "true",
     }
     url = f"{API_BASE}?{urlencode(params)}"
-    return get_json(url).get("results", [])
+    return get_json(url)
 
 
 def fetch_custom_page(params: dict[str, Any]) -> list[dict[str, Any]]:
     query = {"api_key": API_KEY, "fields": SCHOOL_FIELDS, "keys_nested": "true", **params}
     url = f"{API_BASE}?{urlencode(query)}"
     return get_json(url).get("results", [])
+
+
+def fetch_full_segment(predominant: int, segment: str, per_page: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    all_results: list[dict[str, Any]] = []
+    raw_pages: dict[str, Any] = {}
+    page = 0
+    total_pages = None
+
+    while True:
+        key = f"{segment}_page_{page}"
+        print(f"Fetching {key}...", flush=True)
+        payload = fetch_segment_page(predominant, per_page, page)
+        results = payload.get("results", [])
+        raw_pages[key] = payload
+        all_results.extend(results)
+
+        metadata = payload.get("metadata", {}) or {}
+        total = to_int(metadata.get("total"))
+        if total_pages is None and per_page:
+            total_pages = max(1, (total + per_page - 1) // per_page) if total else None
+
+        page += 1
+        if not results:
+            break
+        if total_pages is not None and page >= total_pages:
+            break
+
+    return all_results, raw_pages
 
 
 def build_program_row(
@@ -416,48 +431,17 @@ def main() -> None:
     degree_map = degree_mapping()
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
-    raw_payload: dict[str, list[dict[str, Any]]] = {}
+    raw_payload: dict[str, Any] = {}
     rows: list[dict[str, Any]] = []
 
     for segment in QUERY_SEGMENTS:
-        for page in range(segment["pages"]):
-            key = f"{segment['segment']}_page_{page}"
-            print(f"Fetching {key}...", flush=True)
-            results = fetch_segment_page(segment["predominant"], segment["per_page"], page)
-            raw_payload[key] = results
-            append_matching_rows(rows, degree_map, results, segment["segment"])
-
-    for degree_id in TARGETED_DEGREE_SUPPLEMENTS:
-        degree = degree_map[degree_id]
-        predominant = 3 if degree["award_level"] == "bachelors" else 2
-        for page in range(3):
-            key = f"targeted_{degree_id}_page_{page}"
-            params = {
-                "school.degrees_awarded.predominant": predominant,
-                "latest.programs.cip_4_digit.code": degree["cip4"],
-                "sort": "latest.earnings.10_yrs_after_entry.median:desc",
-                "per_page": 20,
-                "page": page,
-            }
-            print(f"Fetching {key}...", flush=True)
-            results = fetch_custom_page(params)
-            raw_payload[key] = results
-            append_matching_rows(rows, degree_map, results, f"targeted_{degree_id}", {degree_id})
-
-    for state in MISSING_STATE_SUPPLEMENTS:
-        for predominant in (3, 2):
-            key = f"state_{state}_predominant_{predominant}"
-            params = {
-                "school.state": state,
-                "school.degrees_awarded.predominant": predominant,
-                "sort": "latest.earnings.10_yrs_after_entry.median:desc",
-                "per_page": 20,
-                "page": 0,
-            }
-            print(f"Fetching {key}...", flush=True)
-            results = fetch_custom_page(params)
-            raw_payload[key] = results
-            append_matching_rows(rows, degree_map, results, f"state_supplement_{state}")
+        results, payload_pages = fetch_full_segment(
+            segment["predominant"],
+            segment["segment"],
+            segment["per_page"],
+        )
+        raw_payload.update(payload_pages)
+        append_matching_rows(rows, degree_map, results, segment["segment"])
 
     ranked_by_degree_state: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -475,7 +459,7 @@ def main() -> None:
             ),
             reverse=True,
         )
-        for rank, candidate in enumerate(sorted_candidates[:1], start=1):
+        for rank, candidate in enumerate(sorted_candidates[:MAX_PER_DEGREE_STATE], start=1):
             candidate = dict(candidate)
             candidate["degree_state_rank"] = rank
             featured_rows.append(candidate)

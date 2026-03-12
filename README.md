@@ -121,6 +121,8 @@ https://adamsknowledgegraph.github.io/education-outcome-map/
 
 ## Current Coverage Notes
 
-- The program layer currently includes 839 real school options and spans all 50 states plus Washington, DC.
+- The program layer currently includes 3,657 named school-program options from a nationwide College Scorecard pull.
+- The school layer now keeps multiple strong options per degree and state instead of only one featured example.
 - Trade and shorter routes are prioritized alongside bachelor's degrees through community colleges, technical colleges, and apprenticeship-adjacent providers.
+- O*NET enrichment now includes education distributions, work styles, and common technology examples for the featured occupation set.
 - A few paths still lack named school examples because College Scorecard's CIP-4 buckets are too coarse for them right now: `radiologic_technology_associate`, `respiratory_therapy_associate`, and `tile_setting_certificate`.

@@ -11,68 +11,95 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Education Outcome Map</p>
-          <h1>Help students see what a path really buys them, and what it really costs.</h1>
+          <h1>Show students the life behind the choice, not just the title of the degree.</h1>
           <p class="lede">
-            This prototype blends official labor-market data, field-of-degree evidence, and a
-            student-facing lifestyle overlay. It covers classic degrees, shorter credentials, and
-            trades, then makes the compromises explicit: money, hours, AI pressure, schedule
-            control, and whether a big-city move is part of the deal.
+            Start from lifestyle or student fit, then work backward into realistic education routes,
+            actual schools, and downstream careers. This version is built to make the compromises
+            explicit: pay per hour, schedule, training time, city dependence, AI pressure, and the
+            real school options that are currently on the table.
           </p>
         </div>
         <div class="hero-metric">
-          <span>Live dataset</span>
+          <span>Current build</span>
           <strong id="path-count">0</strong>
-          <small id="scope-copy">paths, credentials, careers, and skills with attached provenance</small>
+          <small id="scope-copy">paths and schools with attached provenance</small>
+          <div class="pulse-grid">
+            <div class="pulse-card">
+              <span>Routes</span>
+              <strong id="pulse-degrees">0</strong>
+            </div>
+            <div class="pulse-card">
+              <span>Careers</span>
+              <strong id="pulse-careers">0</strong>
+            </div>
+            <div class="pulse-card">
+              <span>Programs</span>
+              <strong id="pulse-programs">0</strong>
+            </div>
+            <div class="pulse-card">
+              <span>Sources</span>
+              <strong id="pulse-sources">0</strong>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="layout">
         <aside class="panel filters">
-          <h2>Build the student profile</h2>
+          <div class="stack-header">
+            <p class="eyebrow">Student Profile</p>
+            <h2>Build the profile first</h2>
+            <p class="muted">
+              The ranking adapts to grades, cost tolerance, time horizon, interests, strengths, and
+              the life the student wants to protect.
+            </p>
+          </div>
 
           <div class="field">
-            <span>Start from</span>
+            <span>1. Start from</span>
             <div id="journey-toggle" class="segmented"></div>
           </div>
 
           <div class="field">
-            <span>Interests</span>
+            <span>2. Interests</span>
             <div id="interest-chips" class="chips"></div>
           </div>
 
           <div class="field">
-            <span>Strengths</span>
+            <span>3. Strengths</span>
             <div id="strength-chips" class="chips"></div>
           </div>
 
           <label class="field">
-            <span>Academic profile / grades</span>
+            <span>4. Academic profile / grades</span>
             <select id="academic-profile"></select>
           </label>
 
           <label class="field">
-            <span>Budget tolerance</span>
+            <span>5. Budget tolerance</span>
             <select id="budget-level"></select>
           </label>
 
           <label class="field">
-            <span>Training time willing to spend</span>
+            <span>6. Training time willing to spend</span>
             <select id="max-training-years"></select>
           </label>
 
           <label class="field">
-            <span>Lifestyle target</span>
+            <span>7. Lifestyle target</span>
             <select id="lifestyle-tier"></select>
           </label>
 
           <label class="field">
-            <span>Cost of living</span>
+            <span>8. Cost of living</span>
             <select id="city-tier"></select>
           </label>
 
+          <div class="stack-subhead">Reality filters</div>
+
           <label class="toggle">
             <input id="normal-hours" type="checkbox" />
-            <span>I care a lot about keeping evenings and weekends</span>
+            <span>Protect evenings and weekends as much as possible</span>
           </label>
 
           <label class="toggle">
@@ -88,17 +115,20 @@
           <button id="reset-button" class="reset-button" type="button">Reset profile</button>
 
           <div class="legend">
-            <h3>What this prototype does well</h3>
-            <p><strong>Student fit</strong> combines interests, strengths, grades, cost, and time.</p>
-            <p><strong>Lifestyle fit</strong> adds hours, schedule, AI pressure, and hub dependence.</p>
-            <p><strong>Evidence</strong> links back to BLS, O*NET, and official CIP crosswalk sources.</p>
+            <h3>How to read this</h3>
+            <p><strong>Fit</strong> is not prestige. It means realism plus downstream upside.</p>
+            <p><strong>School options</strong> are real named programs, not placeholder examples.</p>
+            <p><strong>Evidence</strong> links back to official sources and the prototype marks overlays clearly.</p>
           </div>
         </aside>
 
         <section class="content">
           <div class="panel summary-panel">
             <div class="summary-head">
-              <h2 id="summary-title">Profile summary</h2>
+              <div>
+                <p class="eyebrow">Decision Readout</p>
+                <h2 id="summary-title">Profile summary</h2>
+              </div>
               <p id="summary-caption"></p>
             </div>
             <div id="summary" class="summary"></div>
@@ -106,15 +136,45 @@
 
           <div class="panel">
             <div class="panel-heading">
-              <h2 id="results-title">Recommendations</h2>
+              <div>
+                <p class="eyebrow">Matched Routes</p>
+                <h2 id="results-title">Recommendations</h2>
+              </div>
               <p id="results-caption"></p>
             </div>
             <div id="results" class="results"></div>
           </div>
 
+          <div class="double-panel">
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Real Programs</p>
+                  <h2>School options worth opening</h2>
+                </div>
+                <p id="school-caption"></p>
+              </div>
+              <div id="school-results" class="school-grid"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">Compare</p>
+                  <h2>Tradeoff matrix</h2>
+                </div>
+                <p id="compare-caption"></p>
+              </div>
+              <div id="compare" class="compare-table"></div>
+            </div>
+          </div>
+
           <div class="panel">
             <div class="panel-heading">
-              <h2>Knowledge graph slice</h2>
+              <div>
+                <p class="eyebrow">Graph View</p>
+                <h2>Knowledge graph slice</h2>
+              </div>
               <p id="graph-caption">
                 Degrees and credentials on the left, careers in the middle, and the skills they
                 demand on the right.
