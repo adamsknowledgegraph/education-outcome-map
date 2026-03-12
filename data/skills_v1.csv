@@ -1,0 +1,32 @@
+skill_id,skill_node_id,skill_name,skill_category,source
+active_learning,skill:active_learning,Active Learning,skill,onet_30_2
+active_listening,skill:active_listening,Active Listening,skill,onet_30_2
+administration_and_management,skill:administration_and_management,Administration and Management,knowledge,onet_30_2
+biology,skill:biology,Biology,knowledge,onet_30_2
+building_and_construction,skill:building_and_construction,Building and Construction,knowledge,onet_30_2
+computers_and_electronics,skill:computers_and_electronics,Computers and Electronics,knowledge,onet_30_2
+coordination,skill:coordination,Coordination,skill,onet_30_2
+critical_thinking,skill:critical_thinking,Critical Thinking,skill,onet_30_2
+customer_and_personal_service,skill:customer_and_personal_service,Customer and Personal Service,knowledge,onet_30_2
+design,skill:design,Design,knowledge,onet_30_2
+economics_and_accounting,skill:economics_and_accounting,Economics and Accounting,knowledge,onet_30_2
+education_and_training,skill:education_and_training,Education and Training,knowledge,onet_30_2
+english_language,skill:english_language,English Language,knowledge,onet_30_2
+fine_arts,skill:fine_arts,Fine Arts,knowledge,onet_30_2
+instructing,skill:instructing,Instructing,skill,onet_30_2
+judgment_and_decision_making,skill:judgment_and_decision_making,Judgment and Decision Making,skill,onet_30_2
+learning_strategies,skill:learning_strategies,Learning Strategies,skill,onet_30_2
+management_of_personnel_resources,skill:management_of_personnel_resources,Management of Personnel Resources,skill,onet_30_2
+mathematics,skill:mathematics,Mathematics,knowledge,onet_30_2
+mechanical,skill:mechanical,Mechanical,knowledge,onet_30_2
+medicine_and_dentistry,skill:medicine_and_dentistry,Medicine and Dentistry,knowledge,onet_30_2
+programming,skill:programming,Programming,skill,onet_30_2
+psychology,skill:psychology,Psychology,knowledge,onet_30_2
+reading_comprehension,skill:reading_comprehension,Reading Comprehension,skill,onet_30_2
+repairing,skill:repairing,Repairing,skill,onet_30_2
+science,skill:science,Science,skill,onet_30_2
+social_perceptiveness,skill:social_perceptiveness,Social Perceptiveness,skill,onet_30_2
+speaking,skill:speaking,Speaking,skill,onet_30_2
+systems_analysis,skill:systems_analysis,Systems Analysis,skill,onet_30_2
+troubleshooting,skill:troubleshooting,Troubleshooting,skill,onet_30_2
+writing,skill:writing,Writing,skill,onet_30_2

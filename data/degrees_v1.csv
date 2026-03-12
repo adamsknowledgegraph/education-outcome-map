@@ -1,0 +1,14 @@
+degree_id,degree_node_id,degree_name,degree_family,cip_code,award_level,source,notes
+cs_bachelors,degree:computer_science_bachelors,Computer Science,Technology,11.0701,bachelors,cip_crosswalk,Broad technical path into software and digital product work
+mis_bachelors,degree:management_information_systems_bachelors,Management Information Systems,Business Technology,52.1201,bachelors,cip_crosswalk,Business + systems bridge with analyst-heavy outcomes
+nursing_bachelors,degree:registered_nursing_bachelors,Registered Nursing,Healthcare,51.3801,bachelors,cip_crosswalk,Direct route into clinical care work with broad geographic demand
+finance_bachelors,degree:finance_bachelors,Finance,Business,52.0801,bachelors,cip_crosswalk,Classic route into financial analysis and related business roles
+economics_bachelors,degree:economics_bachelors,Economics,Business,45.0601,bachelors,cip_crosswalk,"Analytical social science path with policy, research, and business options"
+accounting_bachelors,degree:accounting_bachelors,Accounting,Business,52.0301,bachelors,cip_crosswalk,"Structured route into accounting, audit, and financial operations"
+graphic_design_bachelors,degree:graphic_design_bachelors,Graphic Design,Design,50.0409,bachelors,cip_crosswalk,Visual communication path with creative and digital outcomes
+ux_design_bachelors,degree:web_and_digital_experience_design_bachelors,Web and Digital Experience Design,Design,11.0801,bachelors,cip_crosswalk,Digital design path oriented toward interface and user experience work
+secondary_education_bachelors,degree:secondary_education_bachelors,Secondary Education,Education,13.1205,bachelors,cip_crosswalk,Teaching-focused path with local labor market relevance
+biology_bachelors,degree:biology_bachelors,Biology,Science,26.0101,bachelors,cip_crosswalk,Science foundation that can lead to lab roles or more schooling
+construction_management_bachelors,degree:construction_management_bachelors,Construction Management,Trades,52.2001,bachelors,cip_crosswalk,Operations-heavy path linked to jobsite leadership
+electrician_apprenticeship,degree:electrician_apprenticeship_apprenticeship,Electrician Apprenticeship,Trades,,apprenticeship,manual,Hands-on credential path with strong local demand and low AI exposure
+tile_setting_certificate,degree:tile_setting_certificate_certificate,Tile Setting Certificate,Trades,,certificate,manual,Hands-on craft path with visible tangible output and strong boundary potential

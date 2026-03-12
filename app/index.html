@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Education Outcome Map Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Education Outcome Map</p>
+          <h1>See what a degree or credential might actually feel like.</h1>
+          <p class="lede">
+            This prototype translates education paths into hourly pay, working time, AI pressure,
+            and whether you may need to live near a major hub to access the upside.
+          </p>
+        </div>
+        <div class="hero-metric">
+          <span>Prototype Scope</span>
+          <strong id="path-count">0</strong>
+          <small>education-to-career paths with official source data and lifestyle overlays</small>
+        </div>
+      </section>
+
+      <section class="layout">
+        <aside class="panel filters">
+          <h2>Choose the life you want</h2>
+
+          <label class="field">
+            <span>Lifestyle target</span>
+            <select id="lifestyle-tier"></select>
+          </label>
+
+          <label class="field">
+            <span>Cost of living</span>
+            <select id="city-tier"></select>
+          </label>
+
+          <div class="field">
+            <span>Interests</span>
+            <div id="interest-chips" class="chips"></div>
+          </div>
+
+          <label class="toggle">
+            <input id="normal-hours" type="checkbox" />
+            <span>I care a lot about keeping evenings and weekends</span>
+          </label>
+
+          <label class="toggle">
+            <input id="low-ai" type="checkbox" />
+            <span>Prefer lower AI disruption risk</span>
+          </label>
+
+          <label class="toggle">
+            <input id="avoid-hubs" type="checkbox" />
+            <span>Prefer paths that do not depend on a big city hub</span>
+          </label>
+
+          <button id="reset-button" class="reset-button" type="button">Reset filters</button>
+
+          <div class="legend">
+            <h3>How to read this</h3>
+            <p><strong>$ / hour</strong> shows the money efficiency of a path.</p>
+            <p><strong>Schedule</strong> tells you if your life likely stays regular or shifts around.</p>
+            <p><strong>Tradeoff</strong> tries to state the real compromise in plain English.</p>
+          </div>
+        </aside>
+
+        <section class="content">
+          <div class="panel summary" id="summary"></div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Best-fit paths</h2>
+              <p id="results-caption"></p>
+            </div>
+            <div id="results" class="results"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <h2>Path graph</h2>
+              <p>Degrees and credentials on the left, careers in the middle, top skills on the right.</p>
+            </div>
+            <svg id="graph" viewBox="0 0 980 520" role="img" aria-label="Education path graph"></svg>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./data/prototype-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

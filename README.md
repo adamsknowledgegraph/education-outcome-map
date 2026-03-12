@@ -38,6 +38,8 @@ A dashboard where someone can:
 - `data/`
 - `design/`
 - `notes/`
+- `scripts/build_prototype.py`
+- `app/index.html`
 
 ## Specialist Agents
 
@@ -65,3 +67,31 @@ Reason:
 - easier degree/program to earnings linkage
 - native hourly wage data is available
 - faster to prototype cleanly
+
+## First Prototype
+
+The current prototype combines:
+
+- O*NET 30.2 occupation, skills, interests, job zone, and work-context data
+- O*NET's 2020 CIP -> O*NET-SOC crosswalk
+- a curated set of official BLS Occupational Outlook Handbook metrics for wages, growth, employment, and openings
+
+Build the generated datasets and dashboard:
+
+```bash
+python3 scripts/build_prototype.py
+```
+
+Open the prototype directly:
+
+```bash
+open app/index.html
+```
+
+Main generated outputs:
+
+- `data/degrees_v1.csv`
+- `data/professions_v1.csv`
+- `data/profession_lifestyle_profiles_v1.csv`
+- `data/path_outcomes_v1.csv`
+- `app/data/prototype-data.js`

@@ -1,0 +1,22 @@
+degree_id,onet_soc_code,path_strength,confidence,additional_training_required,path_note,source
+cs_bachelors,15-1252.00,high,0.95,,"Direct and common software path.",manual_plus_cip
+cs_bachelors,15-1255.00,medium,0.68,,"Design/product path from a technical base.",manual_plus_cip
+mis_bachelors,15-1211.00,high,0.90,,"Common analyst path for systems-minded business grads.",manual_plus_related
+mis_bachelors,13-1111.00,medium,0.60,,"Business-process and operations path.",manual_plus_related
+nursing_bachelors,29-1141.00,high,0.98,,"Direct licensed care pathway.",manual_plus_cip
+finance_bachelors,13-2051.00,high,0.90,,"Core finance outcome.",manual_plus_cip
+finance_bachelors,13-1111.00,medium,0.55,,"Strategy and advisory adjacent path.",manual_plus_related
+economics_bachelors,19-3011.00,high,0.83,,"Strong direct analytical path.",manual_plus_cip
+economics_bachelors,13-1111.00,medium,0.60,,"Common business application of economics training.",manual_plus_related
+accounting_bachelors,13-2011.00,high,0.97,,"Direct accounting pathway.",manual_plus_cip
+accounting_bachelors,13-2051.00,medium,0.55,,"Finance-adjacent path for quantitatively strong accounting grads.",manual_plus_related
+graphic_design_bachelors,27-1024.00,high,0.95,,"Direct visual design path.",manual_plus_cip
+graphic_design_bachelors,15-1255.00,medium,0.72,,"Digital interface path for design grads.",manual_plus_cip
+ux_design_bachelors,15-1255.00,high,0.96,,"Direct UX/UI style path.",manual_plus_cip
+ux_design_bachelors,27-1024.00,medium,0.58,,"Graphic communication fallback path.",manual_plus_cip
+secondary_education_bachelors,25-2031.00,high,0.98,,"Direct classroom teaching path.",manual_plus_cip
+biology_bachelors,19-4021.00,high,0.80,,"Realistic lab and technician path without more schooling.",manual_plus_cip
+biology_bachelors,29-1218.00,low,0.35,medical_school,"Possible only with substantial additional training after college.",manual_plus_related
+construction_management_bachelors,11-9021.00,high,0.98,,"Direct site and project leadership path.",manual_plus_cip
+electrician_apprenticeship,47-2111.00,high,0.98,licensure_or_apprenticeship_completion,"Primary skilled-trade path.",manual
+tile_setting_certificate,47-2044.00,high,0.90,certificate_or_apprenticeship,"Primary skilled craft path.",manual

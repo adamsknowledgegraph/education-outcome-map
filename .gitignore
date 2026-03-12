@@ -7,3 +7,5 @@ build/
 .env.local
 *.log
 tmp/
+raw/
+__pycache__/

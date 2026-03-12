@@ -1,0 +1,22 @@
+degree_id,profession_id,edge_type,path_strength,confidence,source,notes,crosswalk_match,additional_training_required
+cs_bachelors,software_developer,leads_to,high,0.95,manual_plus_cip,Direct and common software path.,yes,
+cs_bachelors,web_digital_interface_designer,leads_to,medium,0.68,manual_plus_cip,Design/product path from a technical base.,yes,
+mis_bachelors,computer_systems_analyst,leads_to,high,0.90,manual_plus_related,Common analyst path for systems-minded business grads.,no,
+mis_bachelors,management_analyst,leads_to,medium,0.60,manual_plus_related,Business-process and operations path.,no,
+nursing_bachelors,registered_nurse,leads_to,high,0.98,manual_plus_cip,Direct licensed care pathway.,yes,
+finance_bachelors,financial_analyst,leads_to,high,0.90,manual_plus_cip,Core finance outcome.,yes,
+finance_bachelors,management_analyst,leads_to,medium,0.55,manual_plus_related,Strategy and advisory adjacent path.,no,
+economics_bachelors,economist,leads_to,high,0.83,manual_plus_cip,Strong direct analytical path.,yes,
+economics_bachelors,management_analyst,leads_to,medium,0.60,manual_plus_related,Common business application of economics training.,no,
+accounting_bachelors,accountant,leads_to,high,0.97,manual_plus_cip,Direct accounting pathway.,yes,
+accounting_bachelors,financial_analyst,leads_to,medium,0.55,manual_plus_related,Finance-adjacent path for quantitatively strong accounting grads.,no,
+graphic_design_bachelors,graphic_designer,leads_to,high,0.95,manual_plus_cip,Direct visual design path.,yes,
+graphic_design_bachelors,web_digital_interface_designer,leads_to,medium,0.72,manual_plus_cip,Digital interface path for design grads.,yes,
+ux_design_bachelors,web_digital_interface_designer,leads_to,high,0.96,manual_plus_cip,Direct UX/UI style path.,yes,
+ux_design_bachelors,graphic_designer,leads_to,medium,0.58,manual_plus_cip,Graphic communication fallback path.,yes,
+secondary_education_bachelors,high_school_teacher,leads_to,high,0.98,manual_plus_cip,Direct classroom teaching path.,yes,
+biology_bachelors,biological_technician,leads_to,high,0.80,manual_plus_cip,Realistic lab and technician path without more schooling.,yes,
+biology_bachelors,physician,leads_to,low,0.35,manual_plus_related,Possible only with substantial additional training after college.,no,medical_school
+construction_management_bachelors,construction_manager,leads_to,high,0.98,manual_plus_cip,Direct site and project leadership path.,yes,
+electrician_apprenticeship,electrician,leads_to,high,0.98,manual,Primary skilled-trade path.,no,licensure_or_apprenticeship_completion
+tile_setting_certificate,tile_stone_setter,leads_to,high,0.90,manual,Primary skilled craft path.,no,certificate_or_apprenticeship
