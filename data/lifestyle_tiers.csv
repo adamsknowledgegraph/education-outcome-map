@@ -1,0 +1,4 @@
+lifestyle_tier_id,lifestyle_tier_name,base_required_income_usd,description
+simple,Simple,45000,"Modest spending, lower luxury expectations, stability and free time matter"
+comfortable,Comfortable,80000,"Reasonable comfort, some travel and flexibility, room to save"
+premium,Premium,150000,"High discretionary spend, premium housing and lifestyle expectations"

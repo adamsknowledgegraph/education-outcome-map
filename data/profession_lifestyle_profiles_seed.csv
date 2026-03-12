@@ -1,0 +1,13 @@
+profession_id,profession_name,avg_weekly_hours_band,avg_weekly_hours_estimate,schedule_type,boundary_quality,predictability,ai_exposure,geographic_concentration,physical_intensity,remote_friendliness,weekend_work_likelihood,night_work_likelihood,heuristic_flag,source,notes
+investment_banker,Investment Banker,60_plus,70,extended,weak,low,high,major_hub_dependent,low,low,medium,low,yes,heuristic,"High earnings, very long hours, evenings often lost, and usually tied to major finance hubs"
+software_engineer,Software Engineer,40_50,45,normal,moderate,medium,medium,regional,low,high,low,low,yes,heuristic,"Can vary by employer; generally better boundary potential than finance, with some AI pressure and partial hub concentration"
+nurse_registered,Registered Nurse,35_45,40,shift,moderate,medium,low,local_anywhere,medium,low,high,high,yes,heuristic,"Shift work common; nights and weekends often required, but broad geographic demand"
+teacher_secondary,Secondary School Teacher,40_50,45,normal,moderate,high,low,local_anywhere,medium,low,low,low,yes,heuristic,"School-day rhythm but prep/grading may spill after hours; widely available geographically"
+tile_setter,Tile Setter,35_45,40,normal,strong,high,low,local_anywhere,high,low,low,low,yes,heuristic,"Physically demanding but stronger end-of-day cutoff and low AI exposure"
+electrician,Electrician,40_50,42,normal,strong,medium,low,local_anywhere,high,low,low,low,yes,heuristic,"Often daytime with some variability by project; broad local demand"
+product_designer,Product Designer,40_50,45,normal,moderate,medium,high,regional,low,medium,low,low,yes,heuristic,"Often collaborative and deadline-driven; more AI-sensitive than many physical roles"
+data_analyst,Data Analyst,40_45,42,normal,strong,high,high,regional,low,high,low,low,yes,heuristic,"Generally predictable with good office fit, but significant AI exposure"
+management_consultant,Management Consultant,50_60,55,extended,weak,low,high,major_hub_dependent,medium,medium,medium,low,yes,heuristic,"Travel and late hours can reduce schedule control; often tied to major business hubs"
+physician,Physician,50_60,55,irregular,weak,low,low,regional,high,low,high,high,yes,heuristic,"High income but weak schedule control and frequent off-hours work; lower AI exposure"
+graphic_designer,Graphic Designer,35_45,40,normal,moderate,medium,high,regional,low,medium,low,low,yes,heuristic,"Moderate pay and generally standard schedule, but creative tooling faces high AI pressure"
+accountant,Accountant,40_50,45,normal,moderate,high,high,regional,low,medium,low,low,yes,heuristic,"Seasonality can increase hours around deadlines; many tasks face automation pressure"

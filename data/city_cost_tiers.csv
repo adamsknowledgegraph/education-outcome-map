@@ -1,0 +1,4 @@
+city_cost_tier_id,city_cost_tier_name,income_multiplier,description
+low_cost,Low Cost,0.85,"Lower housing and living costs"
+medium_cost,Medium Cost,1.00,"Baseline national assumption"
+high_cost,High Cost,1.25,"Expensive city or metro area"

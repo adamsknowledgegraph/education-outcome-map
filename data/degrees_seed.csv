@@ -1,0 +1,13 @@
+degree_id,degree_node_id,degree_name,degree_family,cip_code,award_level,source,notes
+cs_bachelors,degree:computer_science_bachelors,Computer Science,Technology,,bachelors,seed_curated,"Strong path into software, data, and technical product roles"
+information_systems_bachelors,degree:information_systems_bachelors,Information Systems,Technology,,bachelors,seed_curated,"Business-technology bridge degree"
+nursing_bachelors,degree:nursing_bachelors,Nursing,Healthcare,,bachelors,seed_curated,"Clinical pathway with broad geographic demand"
+finance_bachelors,degree:finance_bachelors,Finance,Business,,bachelors,seed_curated,"Common feeder for banking, corporate finance, and analyst roles"
+economics_bachelors,degree:economics_bachelors,Economics,Business,,bachelors,seed_curated,"Flexible analytical degree with multiple business outcomes"
+accounting_bachelors,degree:accounting_bachelors,Accounting,Business,,bachelors,seed_curated,"Strong route into accounting and finance operations"
+graphic_design_bachelors,degree:graphic_design_bachelors,Graphic Design,Design,,bachelors,seed_curated,"Visual communication and design-focused degree"
+ux_design_bachelors,degree:ux_design_bachelors,UX Design,Design,,bachelors,seed_curated,"Product and user experience focused route"
+education_bachelors,degree:education_bachelors,Education,Education,,bachelors,seed_curated,"Teaching-oriented route with local labor market relevance"
+biology_bachelors,degree:biology_bachelors,Biology,Science,,bachelors,seed_curated,"Broad science pathway; often requires specialization for premium outcomes"
+pre_med_bachelors,degree:pre_med_bachelors,Pre-Medical Studies,Healthcare,,bachelors,seed_curated,"Prepares for physician track and other advanced healthcare paths"
+construction_management_bachelors,degree:construction_management_bachelors,Construction Management,Trades,,bachelors,seed_curated,"Bridge between trades, projects, and operations"

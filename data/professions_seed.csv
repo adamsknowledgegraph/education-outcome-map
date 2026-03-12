@@ -1,0 +1,13 @@
+profession_id,profession_node_id,profession_name,soc_code,profession_family,median_annual_wage_usd,median_hourly_wage_usd,employment_count,outlook_growth_pct,openings_annual,source
+investment_banker,profession:investment_banker,Investment Banker,,Finance,175000,84.13,,,seed_curated
+software_engineer,profession:software_engineer,Software Engineer,,Technology,145000,69.71,,,seed_curated
+nurse_registered,profession:nurse_registered,Registered Nurse,,Healthcare,93000,44.71,,,seed_curated
+teacher_secondary,profession:teacher_secondary,Secondary School Teacher,,Education,68000,32.69,,,seed_curated
+tile_setter,profession:tile_setter,Tile Setter,,Trades,57000,27.40,,,seed_curated
+electrician,profession:electrician,Electrician,,Trades,68000,32.69,,,seed_curated
+product_designer,profession:product_designer,Product Designer,,Design,125000,60.10,,,seed_curated
+data_analyst,profession:data_analyst,Data Analyst,,Technology,95000,45.67,,,seed_curated
+management_consultant,profession:management_consultant,Management Consultant,,Business,140000,67.31,,,seed_curated
+physician,profession:physician,Physician,,Healthcare,240000,115.38,,,seed_curated
+graphic_designer,profession:graphic_designer,Graphic Designer,,Design,65000,31.25,,,seed_curated
+accountant,profession:accountant,Accountant,,Business,82000,39.42,,,seed_curated

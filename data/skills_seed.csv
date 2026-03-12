@@ -1,0 +1,21 @@
+skill_id,skill_node_id,skill_name,skill_category,source
+programming,skill:programming,Programming,technical,seed_curated
+data_analysis,skill:data_analysis,Data Analysis,analytical,seed_curated
+financial_modeling,skill:financial_modeling,Financial Modeling,finance,seed_curated
+presentation,skill:presentation,Presentation,communication,seed_curated
+communication,skill:communication,Communication,communication,seed_curated
+problem_solving,skill:problem_solving,Problem Solving,analytical,seed_curated
+user_research,skill:user_research,User Research,design,seed_curated
+visual_design,skill:visual_design,Visual Design,design,seed_curated
+teaching,skill:teaching,Teaching,education,seed_curated
+clinical_care,skill:clinical_care,Clinical Care,healthcare,seed_curated
+patient_communication,skill:patient_communication,Patient Communication,healthcare,seed_curated
+project_management,skill:project_management,Project Management,business,seed_curated
+salesmanship,skill:salesmanship,Salesmanship,business,seed_curated
+spreadsheeting,skill:spreadsheeting,Spreadsheet Modeling,finance,seed_curated
+diagnostics,skill:diagnostics,Diagnostics,trades,seed_curated
+installation,skill:installation,Installation,trades,seed_curated
+compliance,skill:compliance,Compliance,business,seed_curated
+strategy,skill:strategy,Strategy,business,seed_curated
+writing,skill:writing,Writing,communication,seed_curated
+design_systems,skill:design_systems,Design Systems,design,seed_curated
