@@ -88,6 +88,12 @@ Open the prototype directly:
 open app/index.html
 ```
 
+Expected public share URL after GitHub Pages deploys:
+
+```text
+https://adamsknowledgegraph.github.io/education-outcome-map/
+```
+
 Main generated outputs:
 
 - `data/degrees_v1.csv`
