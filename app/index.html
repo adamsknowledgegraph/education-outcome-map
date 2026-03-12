@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Education Outcome Map Prototype</title>
+    <title>Education Outcome Map</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -11,22 +11,54 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Education Outcome Map</p>
-          <h1>See what a degree or credential might actually feel like.</h1>
+          <h1>Help students see what a path really buys them, and what it really costs.</h1>
           <p class="lede">
-            This prototype translates education paths into hourly pay, working time, AI pressure,
-            and whether you may need to live near a major hub to access the upside.
+            This prototype blends official labor-market data, field-of-degree evidence, and a
+            student-facing lifestyle overlay. It covers classic degrees, shorter credentials, and
+            trades, then makes the compromises explicit: money, hours, AI pressure, schedule
+            control, and whether a big-city move is part of the deal.
           </p>
         </div>
         <div class="hero-metric">
-          <span>Prototype Scope</span>
+          <span>Live dataset</span>
           <strong id="path-count">0</strong>
-          <small>education-to-career paths with official source data and lifestyle overlays</small>
+          <small id="scope-copy">paths, credentials, careers, and skills with attached provenance</small>
         </div>
       </section>
 
       <section class="layout">
         <aside class="panel filters">
-          <h2>Choose the life you want</h2>
+          <h2>Build the student profile</h2>
+
+          <div class="field">
+            <span>Start from</span>
+            <div id="journey-toggle" class="segmented"></div>
+          </div>
+
+          <div class="field">
+            <span>Interests</span>
+            <div id="interest-chips" class="chips"></div>
+          </div>
+
+          <div class="field">
+            <span>Strengths</span>
+            <div id="strength-chips" class="chips"></div>
+          </div>
+
+          <label class="field">
+            <span>Academic profile / grades</span>
+            <select id="academic-profile"></select>
+          </label>
+
+          <label class="field">
+            <span>Budget tolerance</span>
+            <select id="budget-level"></select>
+          </label>
+
+          <label class="field">
+            <span>Training time willing to spend</span>
+            <select id="max-training-years"></select>
+          </label>
 
           <label class="field">
             <span>Lifestyle target</span>
@@ -37,11 +69,6 @@
             <span>Cost of living</span>
             <select id="city-tier"></select>
           </label>
-
-          <div class="field">
-            <span>Interests</span>
-            <div id="interest-chips" class="chips"></div>
-          </div>
 
           <label class="toggle">
             <input id="normal-hours" type="checkbox" />
@@ -55,34 +82,45 @@
 
           <label class="toggle">
             <input id="avoid-hubs" type="checkbox" />
-            <span>Prefer paths that do not depend on a big city hub</span>
+            <span>Prefer paths that do not depend on a major city hub</span>
           </label>
 
-          <button id="reset-button" class="reset-button" type="button">Reset filters</button>
+          <button id="reset-button" class="reset-button" type="button">Reset profile</button>
 
           <div class="legend">
-            <h3>How to read this</h3>
-            <p><strong>$ / hour</strong> shows the money efficiency of a path.</p>
-            <p><strong>Schedule</strong> tells you if your life likely stays regular or shifts around.</p>
-            <p><strong>Tradeoff</strong> tries to state the real compromise in plain English.</p>
+            <h3>What this prototype does well</h3>
+            <p><strong>Student fit</strong> combines interests, strengths, grades, cost, and time.</p>
+            <p><strong>Lifestyle fit</strong> adds hours, schedule, AI pressure, and hub dependence.</p>
+            <p><strong>Evidence</strong> links back to BLS, O*NET, and official CIP crosswalk sources.</p>
           </div>
         </aside>
 
         <section class="content">
-          <div class="panel summary" id="summary"></div>
+          <div class="panel summary-panel">
+            <div class="summary-head">
+              <h2 id="summary-title">Profile summary</h2>
+              <p id="summary-caption"></p>
+            </div>
+            <div id="summary" class="summary"></div>
+          </div>
+
           <div class="panel">
             <div class="panel-heading">
-              <h2>Best-fit paths</h2>
+              <h2 id="results-title">Recommendations</h2>
               <p id="results-caption"></p>
             </div>
             <div id="results" class="results"></div>
           </div>
+
           <div class="panel">
             <div class="panel-heading">
-              <h2>Path graph</h2>
-              <p>Degrees and credentials on the left, careers in the middle, top skills on the right.</p>
+              <h2>Knowledge graph slice</h2>
+              <p id="graph-caption">
+                Degrees and credentials on the left, careers in the middle, and the skills they
+                demand on the right.
+              </p>
             </div>
-            <svg id="graph" viewBox="0 0 980 520" role="img" aria-label="Education path graph"></svg>
+            <svg id="graph" viewBox="0 0 980 560" role="img" aria-label="Education graph"></svg>
           </div>
         </section>
       </section>

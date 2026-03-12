@@ -2,8 +2,11 @@ skill_id,skill_node_id,skill_name,skill_category,source
 active_learning,skill:active_learning,Active Learning,skill,onet_30_2
 active_listening,skill:active_listening,Active Listening,skill,onet_30_2
 administration_and_management,skill:administration_and_management,Administration and Management,knowledge,onet_30_2
+administrative,skill:administrative,Administrative,knowledge,onet_30_2
 biology,skill:biology,Biology,knowledge,onet_30_2
 building_and_construction,skill:building_and_construction,Building and Construction,knowledge,onet_30_2
+communications_and_media,skill:communications_and_media,Communications and Media,knowledge,onet_30_2
+complex_problem_solving,skill:complex_problem_solving,Complex Problem Solving,skill,onet_30_2
 computers_and_electronics,skill:computers_and_electronics,Computers and Electronics,knowledge,onet_30_2
 coordination,skill:coordination,Coordination,skill,onet_30_2
 critical_thinking,skill:critical_thinking,Critical Thinking,skill,onet_30_2
@@ -11,22 +14,32 @@ customer_and_personal_service,skill:customer_and_personal_service,Customer and P
 design,skill:design,Design,knowledge,onet_30_2
 economics_and_accounting,skill:economics_and_accounting,Economics and Accounting,knowledge,onet_30_2
 education_and_training,skill:education_and_training,Education and Training,knowledge,onet_30_2
+engineering_and_technology,skill:engineering_and_technology,Engineering and Technology,knowledge,onet_30_2
 english_language,skill:english_language,English Language,knowledge,onet_30_2
 fine_arts,skill:fine_arts,Fine Arts,knowledge,onet_30_2
+installation,skill:installation,Installation,skill,onet_30_2
 instructing,skill:instructing,Instructing,skill,onet_30_2
 judgment_and_decision_making,skill:judgment_and_decision_making,Judgment and Decision Making,skill,onet_30_2
+law_and_government,skill:law_and_government,Law and Government,knowledge,onet_30_2
 learning_strategies,skill:learning_strategies,Learning Strategies,skill,onet_30_2
 management_of_personnel_resources,skill:management_of_personnel_resources,Management of Personnel Resources,skill,onet_30_2
 mathematics,skill:mathematics,Mathematics,knowledge,onet_30_2
 mechanical,skill:mechanical,Mechanical,knowledge,onet_30_2
 medicine_and_dentistry,skill:medicine_and_dentistry,Medicine and Dentistry,knowledge,onet_30_2
+monitoring,skill:monitoring,Monitoring,skill,onet_30_2
+operations_monitoring,skill:operations_monitoring,Operations Monitoring,skill,onet_30_2
+production_and_processing,skill:production_and_processing,Production and Processing,knowledge,onet_30_2
 programming,skill:programming,Programming,skill,onet_30_2
 psychology,skill:psychology,Psychology,knowledge,onet_30_2
+quality_control_analysis,skill:quality_control_analysis,Quality Control Analysis,skill,onet_30_2
 reading_comprehension,skill:reading_comprehension,Reading Comprehension,skill,onet_30_2
 repairing,skill:repairing,Repairing,skill,onet_30_2
+sales_and_marketing,skill:sales_and_marketing,Sales and Marketing,knowledge,onet_30_2
 science,skill:science,Science,skill,onet_30_2
+service_orientation,skill:service_orientation,Service Orientation,skill,onet_30_2
 social_perceptiveness,skill:social_perceptiveness,Social Perceptiveness,skill,onet_30_2
 speaking,skill:speaking,Speaking,skill,onet_30_2
 systems_analysis,skill:systems_analysis,Systems Analysis,skill,onet_30_2
+therapy_and_counseling,skill:therapy_and_counseling,Therapy and Counseling,knowledge,onet_30_2
 troubleshooting,skill:troubleshooting,Troubleshooting,skill,onet_30_2
 writing,skill:writing,Writing,skill,onet_30_2

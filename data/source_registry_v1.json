@@ -1,0 +1,754 @@
+[
+  {
+    "source_id": "source:cip:crosswalk",
+    "label": "2020 CIP to O*NET-SOC crosswalk",
+    "url": "https://www.onetcenter.org/crosswalks.html",
+    "source_type": "dataset",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Education-to-career links use the official 2020 CIP to O*NET-SOC crosswalk where available."
+  },
+  {
+    "source_id": "source:degree-field:accounting_bachelors",
+    "label": "Accounting field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:biology_bachelors",
+    "label": "Biology field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/biology/biology-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:carpentry_apprenticeship",
+    "label": "Carpentry Apprenticeship field evidence",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/carpenters.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:civil_engineering_bachelors",
+    "label": "Civil Engineering field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/engineering/engineering-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:communications_bachelors",
+    "label": "Communications field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/communications/communications-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:construction_management_bachelors",
+    "label": "Construction Management field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/construction/construction-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:cs_bachelors",
+    "label": "Computer Science field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/computer-and-information/computer-and-information-technology-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:cybersecurity_bachelors",
+    "label": "Cybersecurity field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/computer-and-information/computer-and-information-technology-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:dental_hygiene_associate",
+    "label": "Dental Hygiene field evidence",
+    "url": "https://www.bls.gov/ooh/healthcare/dental-hygienists.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:economics_bachelors",
+    "label": "Economics field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/social-science/social-science-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:electrician_apprenticeship",
+    "label": "Electrician Apprenticeship field evidence",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:finance_bachelors",
+    "label": "Finance field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:graphic_design_bachelors",
+    "label": "Graphic Design field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/fine-arts/fine-arts-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:healthcare_admin_bachelors",
+    "label": "Healthcare Administration field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/healthcare-and-related/healthcare-and-related-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:hvac_certificate",
+    "label": "HVAC Technology field evidence",
+    "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/heating-air-conditioning-and-refrigeration-mechanics-and-installers.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:marketing_bachelors",
+    "label": "Marketing field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:mechanical_engineering_bachelors",
+    "label": "Mechanical Engineering field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/engineering/engineering-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:mis_bachelors",
+    "label": "Management Information Systems field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/business/business-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:nursing_bachelors",
+    "label": "Registered Nursing field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/healthcare-and-related/healthcare-and-related-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:paralegal_associate",
+    "label": "Paralegal Studies field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/law-and-legal-studies/law-and-legal-studies-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:plumbing_apprenticeship",
+    "label": "Plumbing Apprenticeship field evidence",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:psychology_bachelors",
+    "label": "Psychology field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/psychology/psychology-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:radiologic_technology_associate",
+    "label": "Radiologic Technology field evidence",
+    "url": "https://www.bls.gov/ooh/healthcare/radiologic-technologists.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:respiratory_therapy_associate",
+    "label": "Respiratory Therapy field evidence",
+    "url": "https://www.bls.gov/ooh/healthcare-and-related/healthcare-and-related-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:secondary_education_bachelors",
+    "label": "Secondary Education field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/education/education-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:social_work_bachelors",
+    "label": "Social Work field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/public-policy-and-social-services/public-policy-and-social-services-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:tile_setting_certificate",
+    "label": "Tile Setting Certificate field evidence",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/tile-and-marble-setters.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:degree-field:ux_design_bachelors",
+    "label": "Web and Digital Experience Design field evidence",
+    "url": "https://www.bls.gov/ooh/field-of-degree/computer-and-information/computer-and-information-technology-field-of-degree.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Field-of-degree context comes from official BLS field-of-degree pages."
+  },
+  {
+    "source_id": "source:degree-field:welding_certificate",
+    "label": "Welding Technology field evidence",
+    "url": "https://www.bls.gov/ooh/production/welders-cutters-solderers-and-brazers.htm",
+    "source_type": "field_of_degree",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:onet:accountant",
+    "label": "Accountants and Auditors O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/13-2011.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:biological_technician",
+    "label": "Biological Technicians O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/19-4021.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:carpenter",
+    "label": "Carpenters O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/47-2031.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:civil_engineer",
+    "label": "Civil Engineers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/17-2051.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:computer_systems_analyst",
+    "label": "Computer Systems Analysts O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/15-1211.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:construction_manager",
+    "label": "Construction Managers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/11-9021.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:data_scientist",
+    "label": "Data Scientists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/15-2051.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:dental_hygienist",
+    "label": "Dental Hygienists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/29-1292.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:economist",
+    "label": "Economists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/19-3011.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:electrician",
+    "label": "Electricians O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/47-2111.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:financial_analyst",
+    "label": "Financial and Investment Analysts O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/13-2051.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:graphic_designer",
+    "label": "Graphic Designers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/27-1024.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:high_school_teacher",
+    "label": "High School Teachers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/25-2031.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:hvac_technician",
+    "label": "HVAC Technicians O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/49-9021.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:information_security_analyst",
+    "label": "Information Security Analysts O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/15-1212.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:management_analyst",
+    "label": "Management Analysts O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/13-1111.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:market_research_analyst",
+    "label": "Market Research Analysts O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/13-1161.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:mechanical_engineer",
+    "label": "Mechanical Engineers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/17-2141.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:medical_health_services_manager",
+    "label": "Medical and Health Services Managers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/11-9111.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:paralegal",
+    "label": "Paralegals and Legal Assistants O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/23-2011.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:physician",
+    "label": "Physicians and Surgeons O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/29-1218.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:plumber",
+    "label": "Plumbers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/47-2152.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:public_relations_specialist",
+    "label": "Public Relations Specialists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/27-3031.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:radiologic_technologist",
+    "label": "Radiologic Technologists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/29-2034.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:registered_nurse",
+    "label": "Registered Nurses O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/29-1141.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:release",
+    "label": "O*NET 30.2 database",
+    "url": "https://www.onetcenter.org/database.html",
+    "source_type": "dataset",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:respiratory_therapist",
+    "label": "Respiratory Therapists O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/29-1126.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:social_worker",
+    "label": "Social Workers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/21-1021.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:software_developer",
+    "label": "Software Developers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/15-1252.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:tile_stone_setter",
+    "label": "Tile and Stone Setters O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/47-2044.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:web_digital_interface_designer",
+    "label": "Web and Digital Interface Designers O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/15-1255.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:onet:welder",
+    "label": "Welder O*NET profile",
+    "url": "https://www.onetonline.org/link/summary/51-4121.00",
+    "source_type": "occupation_profile",
+    "publisher": "O*NET / U.S. Department of Labor",
+    "note": "Skills, knowledge, interests, and work-context values come from the O*NET 30.2 database."
+  },
+  {
+    "source_id": "source:ooh:accountant",
+    "label": "Accountants and Auditors OOH page",
+    "url": "https://www.bls.gov/ooh/business-and-financial/accountants-and-auditors.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:biological_technician",
+    "label": "Biological Technicians OOH page",
+    "url": "https://www.bls.gov/ooh/life-physical-and-social-science/biological-technicians.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:carpenter",
+    "label": "Carpenters OOH page",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/carpenters.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:civil_engineer",
+    "label": "Civil Engineers OOH page",
+    "url": "https://www.bls.gov/ooh/architecture-and-engineering/civil-engineers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:computer_systems_analyst",
+    "label": "Computer Systems Analysts OOH page",
+    "url": "https://www.bls.gov/ooh/computer-and-information-technology/computer-systems-analysts.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:construction_manager",
+    "label": "Construction Managers OOH page",
+    "url": "https://www.bls.gov/ooh/management/construction-managers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:data_scientist",
+    "label": "Data Scientists OOH page",
+    "url": "https://www.bls.gov/ooh/math/data-scientists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:dental_hygienist",
+    "label": "Dental Hygienists OOH page",
+    "url": "https://www.bls.gov/ooh/healthcare/dental-hygienists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:economist",
+    "label": "Economists OOH page",
+    "url": "https://www.bls.gov/ooh/life-physical-and-social-science/economists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:electrician",
+    "label": "Electricians OOH page",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:financial_analyst",
+    "label": "Financial and Investment Analysts OOH page",
+    "url": "https://www.bls.gov/ooh/business-and-financial/financial-analysts.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:graphic_designer",
+    "label": "Graphic Designers OOH page",
+    "url": "https://www.bls.gov/ooh/arts-and-design/graphic-designers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:high_school_teacher",
+    "label": "High School Teachers OOH page",
+    "url": "https://www.bls.gov/ooh/education-training-and-library/high-school-teachers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:hvac_technician",
+    "label": "HVAC Technicians OOH page",
+    "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/heating-air-conditioning-and-refrigeration-mechanics-and-installers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:information_security_analyst",
+    "label": "Information Security Analysts OOH page",
+    "url": "https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:management_analyst",
+    "label": "Management Analysts OOH page",
+    "url": "https://www.bls.gov/ooh/business-and-financial/management-analysts.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:market_research_analyst",
+    "label": "Market Research Analysts OOH page",
+    "url": "https://www.bls.gov/ooh/business-and-financial/market-research-analysts.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:mechanical_engineer",
+    "label": "Mechanical Engineers OOH page",
+    "url": "https://www.bls.gov/ooh/architecture-and-engineering/mechanical-engineers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:medical_health_services_manager",
+    "label": "Medical and Health Services Managers OOH page",
+    "url": "https://www.bls.gov/ooh/management/medical-and-health-services-managers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:paralegal",
+    "label": "Paralegals and Legal Assistants OOH page",
+    "url": "https://www.bls.gov/ooh/legal/paralegals-and-legal-assistants.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:physician",
+    "label": "Physicians and Surgeons OOH page",
+    "url": "https://www.bls.gov/ooh/healthcare/physicians-and-surgeons.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:plumber",
+    "label": "Plumbers OOH page",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:public_relations_specialist",
+    "label": "Public Relations Specialists OOH page",
+    "url": "https://www.bls.gov/ooh/media-and-communication/public-relations-specialists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:radiologic_technologist",
+    "label": "Radiologic Technologists OOH page",
+    "url": "https://www.bls.gov/ooh/healthcare/radiologic-technologists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:registered_nurse",
+    "label": "Registered Nurses OOH page",
+    "url": "https://www.bls.gov/ooh/healthcare/registered-nurses.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:respiratory_therapist",
+    "label": "Respiratory Therapists OOH page",
+    "url": "https://www.bls.gov/ooh/healthcare/respiratory-therapists.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:social_worker",
+    "label": "Social Workers OOH page",
+    "url": "https://www.bls.gov/ooh/community-and-social-service/social-workers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:software_developer",
+    "label": "Software Developers OOH page",
+    "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:tile_stone_setter",
+    "label": "Tile and Stone Setters OOH page",
+    "url": "https://www.bls.gov/ooh/construction-and-extraction/tile-and-marble-setters.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:web_digital_interface_designer",
+    "label": "Web and Digital Interface Designers OOH page",
+    "url": "https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:ooh:welder",
+    "label": "Welder OOH page",
+    "url": "https://www.bls.gov/ooh/production/welders-cutters-solderers-and-brazers.htm",
+    "source_type": "occupation_outlook",
+    "publisher": "BLS",
+    "note": "Occupation wages, outlook, and quick facts come from BLS Occupational Outlook Handbook pages accessed on March 12, 2026."
+  },
+  {
+    "source_id": "source:overlay:heuristics",
+    "label": "Student-facing lifestyle overlay",
+    "url": "",
+    "source_type": "heuristic_overlay",
+    "publisher": "Education Outcome Map prototype",
+    "note": "Boundary quality, AI exposure, and geographic concentration combine O*NET work-context data with manual interpretation to stay useful for students."
+  }
+]

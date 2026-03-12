@@ -1,22 +1,39 @@
-degree_id,onet_soc_code,path_strength,confidence,additional_training_required,path_note,source
-cs_bachelors,15-1252.00,high,0.95,,"Direct and common software path.",manual_plus_cip
-cs_bachelors,15-1255.00,medium,0.68,,"Design/product path from a technical base.",manual_plus_cip
-mis_bachelors,15-1211.00,high,0.90,,"Common analyst path for systems-minded business grads.",manual_plus_related
-mis_bachelors,13-1111.00,medium,0.60,,"Business-process and operations path.",manual_plus_related
-nursing_bachelors,29-1141.00,high,0.98,,"Direct licensed care pathway.",manual_plus_cip
-finance_bachelors,13-2051.00,high,0.90,,"Core finance outcome.",manual_plus_cip
-finance_bachelors,13-1111.00,medium,0.55,,"Strategy and advisory adjacent path.",manual_plus_related
-economics_bachelors,19-3011.00,high,0.83,,"Strong direct analytical path.",manual_plus_cip
-economics_bachelors,13-1111.00,medium,0.60,,"Common business application of economics training.",manual_plus_related
-accounting_bachelors,13-2011.00,high,0.97,,"Direct accounting pathway.",manual_plus_cip
-accounting_bachelors,13-2051.00,medium,0.55,,"Finance-adjacent path for quantitatively strong accounting grads.",manual_plus_related
-graphic_design_bachelors,27-1024.00,high,0.95,,"Direct visual design path.",manual_plus_cip
-graphic_design_bachelors,15-1255.00,medium,0.72,,"Digital interface path for design grads.",manual_plus_cip
-ux_design_bachelors,15-1255.00,high,0.96,,"Direct UX/UI style path.",manual_plus_cip
-ux_design_bachelors,27-1024.00,medium,0.58,,"Graphic communication fallback path.",manual_plus_cip
-secondary_education_bachelors,25-2031.00,high,0.98,,"Direct classroom teaching path.",manual_plus_cip
-biology_bachelors,19-4021.00,high,0.80,,"Realistic lab and technician path without more schooling.",manual_plus_cip
-biology_bachelors,29-1218.00,low,0.35,medical_school,"Possible only with substantial additional training after college.",manual_plus_related
-construction_management_bachelors,11-9021.00,high,0.98,,"Direct site and project leadership path.",manual_plus_cip
-electrician_apprenticeship,47-2111.00,high,0.98,licensure_or_apprenticeship_completion,"Primary skilled-trade path.",manual
-tile_setting_certificate,47-2044.00,high,0.90,certificate_or_apprenticeship,"Primary skilled craft path.",manual
+degree_id,onet_soc_code,path_strength,confidence,additional_training_required,estimated_total_training_years,path_note,source
+cs_bachelors,15-1252.00,high,0.96,,4,"Direct and common software path.",manual_plus_cip
+cs_bachelors,15-1212.00,medium,0.78,,4,"Security path from a technical foundation.",manual_plus_cip
+mis_bachelors,15-1211.00,high,0.92,,4,"Common analyst path for systems-minded business grads.",manual_plus_related
+mis_bachelors,13-1111.00,medium,0.64,,4,"Business-process and operations path.",manual_plus_related
+cybersecurity_bachelors,15-1212.00,high,0.97,,4,"One of the clearest degree-to-role mappings in the prototype.",manual_plus_cip
+nursing_bachelors,29-1141.00,high,0.99,licensure,4,"Direct licensed care pathway.",manual_plus_cip
+healthcare_admin_bachelors,11-9111.00,medium,0.70,related_experience,4,"Healthcare operations and administration route.",manual_plus_cip
+finance_bachelors,13-2051.00,high,0.92,,4,"Core finance outcome.",manual_plus_cip
+finance_bachelors,13-1111.00,medium,0.55,,4,"Strategy and advisory adjacent path.",manual_plus_related
+economics_bachelors,19-3011.00,high,0.85,,4,"Strong direct analytical path.",manual_plus_cip
+economics_bachelors,13-1111.00,medium,0.62,,4,"Common business application of economics training.",manual_plus_related
+accounting_bachelors,13-2011.00,high,0.98,,4,"Direct accounting pathway.",manual_plus_cip
+accounting_bachelors,13-2051.00,medium,0.56,,4,"Finance-adjacent path for quantitatively strong accounting grads.",manual_plus_related
+marketing_bachelors,13-1161.00,high,0.92,,4,"Direct market research and growth analytics path.",manual_plus_cip
+graphic_design_bachelors,27-1024.00,high,0.96,,4,"Direct visual design path.",manual_plus_cip
+graphic_design_bachelors,15-1255.00,medium,0.72,,4,"Digital interface path for design grads.",manual_plus_cip
+ux_design_bachelors,15-1255.00,high,0.97,,4,"Direct UX/UI style path.",manual_plus_cip
+ux_design_bachelors,27-1024.00,medium,0.58,,4,"Graphic communication fallback path.",manual_plus_cip
+communications_bachelors,27-3031.00,high,0.91,,4,"Clear communications-to-PR path backed by the CIP crosswalk.",manual_plus_cip
+secondary_education_bachelors,25-2031.00,high,0.98,licensure,4,"Direct classroom teaching path.",manual_plus_cip
+psychology_bachelors,21-1021.00,medium,0.63,licensure_or_masters,4,"People-centered path, but many counseling roles require more schooling.",manual_plus_related
+psychology_bachelors,29-1218.00,low,0.20,medical_school,10,"Technically possible, but this is a long elite training route rather than a default outcome.",manual_plus_related
+social_work_bachelors,21-1021.00,high,0.96,licensure_may_apply,4,"Direct helping-profession path.",manual_plus_cip
+biology_bachelors,19-4021.00,high,0.82,,4,"Realistic lab and technician path without more schooling.",manual_plus_cip
+biology_bachelors,29-1218.00,low,0.35,medical_school,10,"Possible only with substantial additional training after college.",manual_plus_related
+civil_engineering_bachelors,17-2051.00,high,0.98,licensure_for_public_facing_work,4,"Direct civil engineering path.",manual_plus_cip
+mechanical_engineering_bachelors,17-2141.00,high,0.98,licensure_for_public_facing_work,4,"Direct mechanical engineering path.",manual_plus_cip
+construction_management_bachelors,11-9021.00,high,0.98,,4,"Direct site and project leadership path.",manual_plus_cip
+paralegal_associate,23-2011.00,high,0.98,,2,"Direct applied legal-support path.",manual_plus_cip
+dental_hygiene_associate,29-1292.00,high,0.99,licensure,3,"Shorter healthcare route with direct licensure path.",manual_plus_cip
+radiologic_technology_associate,29-2034.00,high,0.99,licensure_or_certification,2,"Direct imaging technician path.",manual_plus_cip
+respiratory_therapy_associate,29-1126.00,high,0.99,licensure,2,"Direct respiratory-care licensure path.",manual_plus_cip
+electrician_apprenticeship,47-2111.00,high,0.99,apprenticeship_completion_and_licensure,4,"Primary skilled-trade path.",manual
+carpentry_apprenticeship,47-2031.00,high,0.98,apprenticeship_completion_and_licensure,3,"Primary carpentry pathway.",manual_plus_cip
+plumbing_apprenticeship,47-2152.00,high,0.99,apprenticeship_completion_and_licensure,4,"Primary skilled-trade path with paid training.",manual_plus_cip
+hvac_certificate,49-9021.00,high,0.96,certificate_or_apprenticeship,1,"Fast route into HVAC technician work.",manual_plus_cip
+welding_certificate,51-4121.00,high,0.96,certificate_or_union_training,1,"Fast fabrication and industrial trades path.",manual_plus_cip
+tile_setting_certificate,47-2044.00,high,0.90,certificate_or_apprenticeship,1,"Primary skilled craft path.",manual
